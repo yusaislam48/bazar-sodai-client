@@ -1,0 +1,20 @@
+.product-price {
+    color: #71BA58;
+    font-weight: 650;
+}
+.buy-button{
+    color: white;
+    background-color: #71BA58;
+    border: none;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: larger;
+}
+.buy-button:hover{
+    color: black;
+    background-color: yellowgreen;
+}
