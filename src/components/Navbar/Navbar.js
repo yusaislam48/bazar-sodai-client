@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import logo from '../../icons/logo.png'
 // import $ from 'jquery';
 // import "../../../node_modules/jquery/dist/jquery.min.js";
@@ -7,6 +8,9 @@ import logo from '../../icons/logo.png'
 // import "bootstrap/js/src/collapse.js";
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const {isSignedIn, name, email, image} = loggedInUser;
+
     return (
             <nav className="navbar mb-5 navbar-expand-lg navbar-light">
                 <div className="container-fluid">
@@ -18,13 +22,28 @@ const Navbar = () => {
                     </button> */}
                     {/* <div className="collapse navbar-collapse" id="navbarNavAltMarkup"> */}
                         <div className="navbar-nav">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
-                            <a className="nav-link" href="/orders">Orders</a>
-                            <a className="nav-link" href="/deals">Deals</a>
-                            <a className="nav-link" href="/admin">Admin</a>
-                            <Link to="/login">
-                                <button type="button" className="btn btn-warning">Login</button>
+                            <Link className="nav-link"  to='/'>
+                                <h5>Home</h5>
                             </Link>
+                            <Link className="nav-link"  to='/orders'>
+                                <h5>Orders</h5>
+                            </Link>
+                            <Link className="nav-link"  to='/deals'>
+                                <h5>Deals</h5>
+                            </Link>
+                            <Link className="nav-link"  to='/admin'>
+                                <h5>Admin</h5>
+                            </Link>
+                            {
+                                isSignedIn 
+                                ?   <Link className="nav-link disabled"  to='#'>
+                                        <h5 style={{color: "#71BA58"}}>{name}</h5>
+                                        
+                                    </Link>
+                                :   <Link to="/login">
+                                        <button type="button" className="btn btn-warning">Login</button>
+                                    </Link>
+                            }
                         </div>
                     </div>
                 {/* </div> */}

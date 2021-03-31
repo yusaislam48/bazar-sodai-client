@@ -25,18 +25,18 @@ export default function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
-      <h3>{loggedInUser.email}</h3>
+      <p>{loggedInUser.email}</p>
       <Navbar></Navbar>
       <Switch>
         <Route exact path="/">
           <Home></Home>
         </Route>
-        <Route path="/orders">
+        <PrivateRoute path="/orders">
           <Orders></Orders>
-        </Route>
-        <PrivateRoute path="/admin">
-          <Admin></Admin>
         </PrivateRoute>
+        <Route path="/admin">
+          <Admin></Admin>
+        </Route>
         <Route path="/login">
           <Login></Login>
         </Route>
