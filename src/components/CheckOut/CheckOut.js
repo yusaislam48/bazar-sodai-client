@@ -25,6 +25,7 @@ const CheckOut = () => {
             price: price,
             weight: weight,
             imageUrl: imageUrl,
+            orderTime: new Date(),
             customerName: loggedInUser.name,
             customerEmail: loggedInUser.email
         }
@@ -44,7 +45,7 @@ const CheckOut = () => {
     return (
         <div className="container">
             <h3 style={{fontWeight: "700", color:"gray"}}>Checkout</h3><br/>
-            <div className='border border-success rounded-top p-2'>
+            <div className='border border-success rounded-top p-1'>
                 <table className="table container">
                     <thead>
                         <tr className="table-success">

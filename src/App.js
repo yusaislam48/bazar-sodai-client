@@ -32,9 +32,9 @@ export default function App() {
         <Route exact path="/">
           <Home></Home>
         </Route>
-        <PrivateRoute path="/orders">
+        <Route path="/orders">
           <Orders></Orders>
-        </PrivateRoute>
+        </Route>
         <Route path="/admin">
           <Admin></Admin>
         </Route>
@@ -47,9 +47,9 @@ export default function App() {
         <Route path="/deals">
           <Deals></Deals>
         </Route>
-        <PrivateRoute path="/checkout/:productId">
+        <Route path="/checkout/:productId">
           <CheckOut></CheckOut>
-        </PrivateRoute>
+        </Route>
       </Switch>
     </Router>
     </UserContext.Provider>
