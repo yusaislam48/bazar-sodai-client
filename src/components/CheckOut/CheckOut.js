@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { UserContext } from '../../App';
 import CheckOutTable from './CheckOutTable';
+import { format, formatRelative, subDays } from 'date-fns'
 
 const CheckOut = () => {
     const { productId } = useParams();
@@ -17,7 +18,7 @@ const CheckOut = () => {
     }, [checkOutProduct]);
     
     const {_id, name, price, weight, imageUrl} = checkOutProduct;
-
+    const history = useHistory();
     const handleCheckout = () => {
         const orderedProduct = {
             productId: _id,
@@ -25,11 +26,12 @@ const CheckOut = () => {
             price: price,
             weight: weight,
             imageUrl: imageUrl,
-            orderTime: new Date(),
+            orderDate: format(new Date(), 'dd/MM/yyyy'),
+            // orderTime: formatRelative(subDays(new Date(), 3), new Date()),
             customerName: loggedInUser.name,
             customerEmail: loggedInUser.email
         }
-        console.log(orderedProduct)
+        // console.log(orderedProduct)
 
         fetch('https://bazar-sodai01.herokuapp.com/addOrderProduct', {
             method: "POST",
@@ -37,7 +39,8 @@ const CheckOut = () => {
             body: JSON.stringify(orderedProduct)
         })
         .then(res => {
-            console.log('server site res', res)
+            console.log('server site res', res);
+            history.push('/orders')
         })
     };
     
