@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
 const ProductCard = ({product}) => {
-    const {name, price, imageUrl, weight} = product;
+    const {_id ,name, price, imageUrl, weight} = product;
+
     return (
         <div className="col mb-3">
             <div className="card h-100">
@@ -15,8 +17,10 @@ const ProductCard = ({product}) => {
                         <div>
                             <h3 className='product-price'><span className="taka-sing">৳</span>{price}</h3>
                         </div>
-                        <div>
-                            <button className="buy-button">Buy Now</button>
+                        <div> 
+                            <Link to={`/checkout/${_id}`}>
+                                <button className="buy-button">Buy Now</button>
+                            </Link>
                         </div>
                     </div>
 

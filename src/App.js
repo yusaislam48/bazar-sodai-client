@@ -13,6 +13,7 @@ import Deals from './components/Deals/Deals';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ManageProducts from './components/ManageProducts/ManageProducts';
+import CheckOut from './components/CheckOut/CheckOut';
 
 export const UserContext = React.createContext();
 
@@ -26,7 +27,6 @@ export default function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
-      <p>{loggedInUser.email}</p>
       <Navbar></Navbar>
       <Switch>
         <Route exact path="/">
@@ -47,6 +47,9 @@ export default function App() {
         <Route path="/deals">
           <Deals></Deals>
         </Route>
+        <PrivateRoute path="/checkout/:productId">
+          <CheckOut></CheckOut>
+        </PrivateRoute>
       </Switch>
     </Router>
     </UserContext.Provider>
