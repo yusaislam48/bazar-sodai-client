@@ -12,6 +12,7 @@ import Admin from './components/Admin/Admin';
 import Deals from './components/Deals/Deals';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ManageProducts from './components/ManageProducts/ManageProducts';
 
 export const UserContext = React.createContext();
 
@@ -39,6 +40,9 @@ export default function App() {
         </Route>
         <Route path="/login">
           <Login></Login>
+        </Route>
+        <Route path="/manageProducts">
+          <ManageProducts></ManageProducts>
         </Route>
         <Route path="/deals">
           <Deals></Deals>

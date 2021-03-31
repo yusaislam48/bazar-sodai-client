@@ -4,11 +4,11 @@ import ProductCard from '../ProductCard/ProductCard';
 const Home = () => {
     const [products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:4000/products')
+        fetch('https://bazar-sodai01.herokuapp.com/products')
         .then(res => res.json())
         .then(data => {
             setProducts(data);
-            console.log(data)
+            // console.log(data)
         })
     }, [products]);
     return (

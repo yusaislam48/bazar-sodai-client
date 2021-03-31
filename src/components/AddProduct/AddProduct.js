@@ -14,7 +14,7 @@ const AddProduct = () => {
             imageUrl: imageUrl
         }
         console.log(productData)
-        fetch('http://localhost:4000/addProduct', {
+        fetch('https://bazar-sodai01.herokuapp.com/addProduct', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(productData)
@@ -43,11 +43,29 @@ const AddProduct = () => {
         <div className='container'>
             <h2>This is add product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="name" defaultValue="test" ref={register} />
-                <input name="price" defaultValue="130" ref={register} />
-                <input name="weight" defaultValue="130" ref={register} />
-                <input name="image" type="file" onChange={handleImageUpload} />
-                <input type="submit" />
+            <div className="row">
+                <div className="col-6">
+                    <label for="formFile" class="form-label">Product Name</label>
+                    <input class="form-control mb-2" name="name" defaultValue="test" ref={register} />
+                </div>
+                <div className="col-6">
+                    <label for="formFile" class="form-label">Price</label>
+                    <input class="form-control mb-2" placeholder='price' name="price" ref={register} />
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-6">
+                    <label for="formFile" class="form-label">Weight</label>
+                    <input class="form-control mb-2" placeholder='weight' name="weight" ref={register} />
+                </div>
+                <div className="col-6">
+                    <label for="formFile" class="form-label">Add Photo</label>
+                    <input class="form-control mb-2" name="image" type="file" onChange={handleImageUpload} />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Add Product</button>
+
             </form>
         </div>
     );
