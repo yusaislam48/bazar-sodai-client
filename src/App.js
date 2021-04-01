@@ -8,12 +8,12 @@ import {
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import Orders from './components/Orders/Orders';
-import Admin from './components/Admin/Admin';
 import Deals from './components/Deals/Deals';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ManageProducts from './components/ManageProducts/ManageProducts';
 import CheckOut from './components/CheckOut/CheckOut';
+import AddProduct from './components/AddProduct/AddProduct';
 
 export const UserContext = React.createContext();
 
@@ -35,8 +35,11 @@ export default function App() {
         <PrivateRoute path="/orders">
           <Orders></Orders>
         </PrivateRoute>
-        <Route path="/admin">
-          <Admin></Admin>
+        <Route path="/admin/addproduct">
+          <AddProduct></AddProduct>
+        </Route>
+        <Route path="/admin/manageproduct">
+          <ManageProducts></ManageProducts>
         </Route>
         <Route path="/login">
           <Login></Login>

@@ -31,7 +31,7 @@ const Orders = () => {
             
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {
-                    orders.map(order => <OrderCard order={order}></OrderCard>)
+                    orders.map(order => <OrderCard key={order._id} order={order}></OrderCard>)
                 }
             </div>
 

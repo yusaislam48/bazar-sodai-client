@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import SideBar from '../SideBar/SideBar';
 
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
@@ -13,7 +14,6 @@ const AddProduct = () => {
             weight: data.weight,
             imageUrl: imageUrl
         }
-        console.log(productData)
         fetch('https://bazar-sodai01.herokuapp.com/addProduct', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
@@ -41,32 +41,39 @@ const AddProduct = () => {
 
     return (
         <div className='container'>
-            <h2>This is add product</h2>
+            <div className="row">
+            <div className='col-md-3 mb-4'>
+                <SideBar></SideBar>
+            </div>
+            <div className='col-md-9'>
+            <h3 style={{fontWeight: "700", color:"gray"}}>Add Product</h3><br/>
             <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
                 <div className="col-6">
-                    <label for="formFile" class="form-label">Product Name</label>
-                    <input class="form-control mb-2" name="name" defaultValue="test" ref={register} />
+                    <label className="form-label">Product Name</label>
+                    <input className="form-control mb-2" name="name" placeholder='Product Name' ref={register} />
                 </div>
                 <div className="col-6">
-                    <label for="formFile" class="form-label">Price</label>
-                    <input class="form-control mb-2" placeholder='price' name="price" ref={register} />
+                    <label className="form-label">Price</label>
+                    <input className="form-control mb-2" placeholder='Price' name="price" ref={register} />
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-6">
-                    <label for="formFile" class="form-label">Weight</label>
-                    <input class="form-control mb-2" placeholder='weight' name="weight" ref={register} />
+                    <label className="form-label">Weight</label>
+                    <input className="form-control mb-2" placeholder='Weight' name="weight" ref={register} />
                 </div>
                 <div className="col-6">
-                    <label for="formFile" class="form-label">Add Photo</label>
-                    <input class="form-control mb-2" name="image" type="file" onChange={handleImageUpload} />
+                    <label className="form-label">Add Photo <span style={{color:'#71BA58'}}>(Wait 10-15 sec)</span></label>
+                    <input className="form-control mb-2" name="image" type="file" onChange={handleImageUpload} />
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">Add Product</button>
+            <button type="submit" className="btn btn-success">Add Product</button>
 
             </form>
+            </div>
+            </div>
         </div>
     );
 };
