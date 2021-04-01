@@ -9,7 +9,6 @@ const Home = () => {
         .then(res => res.json())
         .then(data => {
             setProducts(data);
-            // console.log(data)
         })
     }, [products]);
     return (
@@ -23,6 +22,17 @@ const Home = () => {
                         </div>
                     }
                 </div>
+            </div>
+
+            <div>
+                <form class="col-md-6 m-auto py-2">
+                    <div class="input-group mb-5">
+                        <input type="text" class="form-control" placeholder="Search for Grocery..."/>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-success">Search</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         
             <div className="row row-cols-1 row-cols-md-3 g-4">

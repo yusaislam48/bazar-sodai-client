@@ -10,7 +10,6 @@ const ManageProducts = () => {
         .then(res => res.json())
         .then(data => {
             setProducts(data);
-            // console.log(data)
         })
     }, [products]);
     return (
