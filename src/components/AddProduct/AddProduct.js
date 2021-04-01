@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import SideBar from '../SideBar/SideBar';
 
 const AddProduct = () => {
+    document.title = "Add Product";
     const { register, handleSubmit } = useForm();
     const [imageUrl, setImageUrl] = useState(null);
 
@@ -40,7 +41,7 @@ const AddProduct = () => {
 
 
     return (
-        <div className='container'>
+        <div className='container mb-4'>
             <div className="row">
             <div className='col-md-3 mb-4'>
                 <SideBar></SideBar>

@@ -3,6 +3,7 @@ import { UserContext } from '../../App';
 import OrderCard from './OrderCard';
 
 const Orders = () => {
+    document.title = "Orders";
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orders, setOrders] = useState([]);
     useEffect(()=>{

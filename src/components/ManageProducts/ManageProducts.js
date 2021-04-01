@@ -3,6 +3,7 @@ import SideBar from '../SideBar/SideBar';
 import Table from './Table';
 
 const ManageProducts = () => {
+    document.title = "Manage Product";
     const [products, setProducts] = useState([]);
     useEffect(()=>{
         fetch('https://bazar-sodai01.herokuapp.com/products')
@@ -13,7 +14,7 @@ const ManageProducts = () => {
         })
     }, [products]);
     return (
-        <div className="container">
+        <div className="container mb-4">
             <div className="row">
                 <div className="col-md-3 mb-4">
                     <SideBar></SideBar>

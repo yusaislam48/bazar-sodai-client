@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 
 const Home = () => {
+    document.title = "Bazar Sodai";
     const [products, setProducts] = useState([]);
     useEffect(()=>{
         fetch('https://bazar-sodai01.herokuapp.com/products')
@@ -12,7 +13,7 @@ const Home = () => {
         })
     }, [products]);
     return (
-        <div className="container">
+        <div className="container mb-5">
             <div className="d-flex justify-content-center align-items-center">
                 <div>
                     {

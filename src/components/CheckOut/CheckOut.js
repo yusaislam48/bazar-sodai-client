@@ -5,6 +5,7 @@ import CheckOutTable from './CheckOutTable';
 import { format, formatRelative, subDays } from 'date-fns'
 
 const CheckOut = () => {
+    document.title = "Checkout";
     const { productId } = useParams();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     

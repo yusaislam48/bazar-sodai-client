@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Deals = () => {
+    document.title = "Deals";
     return (
         <div className='container'>
             <h3 style={{fontWeight: "700", color:"gray"}}>Deals</h3><br/>
