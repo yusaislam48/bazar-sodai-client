@@ -35,12 +35,12 @@ export default function App() {
         <PrivateRoute path="/orders">
           <Orders></Orders>
         </PrivateRoute>
-        <Route path="/admin/addproduct">
+        <PrivateRoute path="/admin/addproduct">
           <AddProduct></AddProduct>
-        </Route>
-        <Route path="/admin/manageproduct">
+        </PrivateRoute>
+        <PrivateRoute path="/admin/manageproduct">
           <ManageProducts></ManageProducts>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login></Login>
         </Route>

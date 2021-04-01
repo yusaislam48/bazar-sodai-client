@@ -13,16 +13,6 @@ const Home = () => {
     }, [products]);
     return (
         <div className="container mb-5">
-            <div className="d-flex justify-content-center align-items-center">
-                <div>
-                    {
-                        products.length === 0 && 
-                        <div className="spinner-border text-success" role="status">
-                            <span className="visually-hidden"></span>
-                        </div>
-                    }
-                </div>
-            </div>
 
             <div>
                 <form class="col-md-6 m-auto py-2">
@@ -33,6 +23,17 @@ const Home = () => {
                         </div>
                     </div>
                 </form>
+            </div>
+
+            <div className="d-flex justify-content-center align-items-center">
+                <div>
+                    {
+                        products.length === 0 && 
+                        <div className="spinner-border text-success" role="status">
+                            <span className="visually-hidden"></span>
+                        </div>
+                    }
+                </div>
             </div>
         
             <div className="row row-cols-1 row-cols-md-3 g-4">
