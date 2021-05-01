@@ -17,7 +17,7 @@ const Navbar = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
+                        <div className="navbar-nav ml-auto">
                             <Link className="nav-link"  to='/'>
                                 <h5>Home</h5>
                             </Link>
